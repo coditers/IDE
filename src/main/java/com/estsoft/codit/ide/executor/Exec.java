@@ -58,17 +58,11 @@ public class Exec {
     compileOutput = execCommand(compileCommand, null, false, true).getOutput();
     String runtimeOutput = execCommand(runtimeCommand, testCaseVo, false, true).getOutput();
 
-    if(compileOutput.equals("")){
+    if(compileOutput.equals("") == false ){
       //컴파일 성공시 컴파일의 결과는 "".  런타임 결과를 보여줌
-      return runtimeOutput;
-    }
-    else if (runtimeOutput.equals("")) {
-      //컴파일 오류시 런타임의 결과는 "".  컴파일 에러를 읽어서 가져옴
       return compileOutput;
     }
-    else {
-      return "이건 나와선 안되는 결과야";
-    }
+      return runtimeOutput;
   }
 
   public ExecResultInfo mark(TestCaseVo testCaseVo){
