@@ -1,6 +1,7 @@
 package com.estsoft.codit.ide.interceptor;
 
 import com.estsoft.codit.db.vo.ApplicantVo;
+import com.estsoft.codit.db.vo.ClientVo;
 import com.estsoft.codit.ide.annotation.Auth;
 
 import org.springframework.web.method.HandlerMethod;
@@ -32,7 +33,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     }
 
     ApplicantVo applicantVo = (ApplicantVo)session.getAttribute( "authApplicant" );
-    if( applicantVo == null ) {
+    ClientVo clientVo = (ClientVo)session.getAttribute("authClient");
+    if( applicantVo == null && clientVo==null ) {
       RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/invalid-session.jsp");
       rd.forward( request, response );
       return false;

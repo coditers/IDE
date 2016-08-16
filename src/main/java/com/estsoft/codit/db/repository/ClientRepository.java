@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public class ClientRepository {
+
   @Autowired
   private SqlSession sqlSession;
 
@@ -25,4 +26,11 @@ public class ClientRepository {
     return sqlSession.selectOne("client.selectById", id);
   }
 
+  public ClientVo getByEmail(String email) {
+    return sqlSession.selectOne("client.selectByEmail", email);
+  }
+
+  public int getByRecruitId(int ticket) {
+    return sqlSession.selectOne("client.selectByRecruitId", ticket);
+  }
 }

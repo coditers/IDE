@@ -30,6 +30,10 @@
             <bean class="com.estsoft.codit.ide.interceptor.InstructionInterceptor" />
         </mvc:interceptor>
         <mvc:interceptor>
+            <mvc:mapping path="/client/instruction" />
+            <bean class="com.estsoft.codit.ide.interceptor.ClientInterceptor" />
+        </mvc:interceptor>
+        <mvc:interceptor>
             <mvc:mapping path="/**" />
             <mvc:exclude-mapping path="/assets/**" />
             <bean class="com.estsoft.codit.ide.interceptor.AuthInterceptor" />

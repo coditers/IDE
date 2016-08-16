@@ -28,9 +28,6 @@ public class MainController {
    */
   @RequestMapping("/")
   public String index(@RequestParam(value = "ticket", defaultValue="") String ticket, Model model) {
-    if( ticket.equals("") ){
-      return "index-error";
-    }
     boolean existsTicket = mainService.checkTicket(ticket, model);
     if(existsTicket){
       return "index";
@@ -43,8 +40,8 @@ public class MainController {
    세션을 부여하고 시험 중 유의사항에 대해 안내하는 페이지
    */
   @RequestMapping("/instruction")
-  public String instruction(@RequestParam(value = "email", defaultValue="") String email, @AuthApplicant ApplicantVo applicantVo) {
-    //authInterceptor에서 ticket과 email이 맞는지 체크해서 맞으면 세션을 부여하고 @AuthApplicant에 값을 넣어준다
+  public String instruction(@AuthApplicant ApplicantVo applicantVo) {
+    //InstructionInterceptor에서 ticket과 email이 맞는지 체크해서 맞으면 세션을 부여하고 @AuthApplicant에 값을 넣어준다
     if(applicantVo==null){
       return "instruction-error";
     }
@@ -63,6 +60,4 @@ public class MainController {
     mainService.setPracticeProblem(model);
     return "practice";
   }
-
-
 }
