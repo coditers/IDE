@@ -1,7 +1,7 @@
 var load_code = function () {
     var editor = ace.edit("editor");
     $.ajax({
-        url: '/test/load',
+        url: '/ide/test/load',
         type: "post",
         data: {"problem_id": problem_id, "applicant_id": applicant_id},
         success: function (response) {
@@ -23,13 +23,13 @@ var final_submit = function () {
     var a = confirm('really?');
     if (a) {
         $.ajax({
-            url: '/test/submit',
+            url: '/ide/test/submit',
             type: "post",
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             //dataType: "json",
             success: function () {
                 alert("good job");
-                location.href = "/result";
+                location.href = "/ide/result";
             },
             error: function (xhr, status, error) {
                 console.error(status + ":" + error);

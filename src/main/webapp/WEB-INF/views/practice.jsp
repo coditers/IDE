@@ -131,7 +131,7 @@
 <!-- import external js files -->
 <script src="${pageContext.request.contextPath }/assets/ace/ace.js" type="text/javascript"  charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/jquery.simple.timer.js" type="text/javascript"  charset="utf-8"></script>
-<script type="text/javascript" src="/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/ide.js" type="text/javascript"  charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/practice_page.js" type="text/javascript"  charset="utf-8"></script>
 
@@ -163,7 +163,7 @@
         $('.timer').startTimer({
             onComplete: function () {
                 new_alert('go testing?');
-                location.href = "/test";
+                location.href = "${pageContext.request.contextPath}/test";
             }
         });
         //ctrl + S

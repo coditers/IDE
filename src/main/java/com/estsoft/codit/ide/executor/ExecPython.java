@@ -11,7 +11,7 @@ class ExecPython extends Exec {
 
   ExecPython(SourceCodeVo sourceCodeVo, ProblemVo problemVo) {
     super(sourceCodeVo, problemVo, "/task.py", "/main.py");
-    this.runtimeCommand = new String[]{"python3", WORKSPACE_PATH+"sourcecode/" + sourceCodeVo.getId() + "/main.py"};
+    this.runtimeCommand = new String[]{"/usr/bin/python", WORKSPACE_PATH+"sourcecode/" + sourceCodeVo.getId() + "/main.py"};
   }
 
   //python만 유일하게 컴파일 과정이 없으므로 override해줌

@@ -42,9 +42,4 @@
             <bean class="com.estsoft.codit.ide.resolver.AuthApplicantHandlerMethodArgumentResolver" />
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
-
-    <!-- the mvc resources tag does the magic -->
-    <mvc:resources mapping="/assets/materialize/**" location="http://localhost/static/materialize/" />
-    <mvc:resources mapping="/assets/ace/**" location="http://localhost/static/ace/" />
-
 </beans>

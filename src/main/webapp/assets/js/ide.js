@@ -86,7 +86,7 @@ var save_code = function () {
     var editor = ace.edit("editor");
     var code = editor.getValue();
     $.ajax({
-        url: '/test/save',
+        url: '/ide/test/save',
         type: "post",
         //리턴값은 'success' or 'fail'
         data: {"code": code, "problem_id": problem_id},
@@ -110,13 +110,13 @@ var run_code = function () {
     var test_case_id = $('select[name=test_cases]').get(current_k - 1).value;
 
     $.ajax({
-        url: '/test/save',
+        url: '/ide/test/save',
         type: "post",
         data: {"code": code, "problem_id": problem_id},
         success: function (response) {
             if (response == 'success') {
                 $.ajax({
-                    url: '/test/run',
+                    url: '/ide/test/run',
                     type: "post",
                     contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                     //dataType: "json",

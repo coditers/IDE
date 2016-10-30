@@ -7,7 +7,7 @@
 <body>
 <script>
     alert('expired session');
-    location.href = '/';
+    location.href = '/ide/';
 </script>
 </body>
 </html>

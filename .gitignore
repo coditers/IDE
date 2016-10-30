@@ -5,3 +5,5 @@ target/
 lib/
 rebel.xml
 pom-*.xml
+src/main/webapp/assets/ace
+src/main/webapp/assets/materialize

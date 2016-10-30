@@ -8,7 +8,7 @@ var final_submit = function () {
 var goTest = function () {
     //new_confirm 구현 귀찮다
     //new_alert("let's go test");
-    location.href = "/test";
+    location.href = "/ide/test";
 };
 
 //spotlight 관련 변수, 함수

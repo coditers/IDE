@@ -35,7 +35,7 @@
                 <div id="task${status.count}" class="col s12 grey darken-2 white-text">
                     <h3>${problemInfoVo.name}</h3>
                     <c:set var="newline" value="<%= \"\n\" %>" />
-                    <p>${fn:replace(problemInfoVo.description, newline, '<br>')}';</p>
+                    <p>${fn:replace(problemInfoVo.description, newline, '<br>')}</p>
                 </div>
             </c:forEach>
         </div>
@@ -132,8 +132,8 @@
 <!-- import external js files -->
 <script src="${pageContext.request.contextPath }/assets/ace/ace.js" type="text/javascript"  charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/jquery.simple.timer.js" type="text/javascript"  charset="utf-8"></script>
-<script type="text/javascript" src="/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery.spotlight.js" type="text/javascript" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/ide.js" type="text/javascript"  charset="utf-8"></script>
 <script src="${pageContext.request.contextPath }/assets/js/test_page.js" type="text/javascript"  charset="utf-8"></script>
 
